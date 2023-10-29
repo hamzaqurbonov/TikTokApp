@@ -17,10 +17,10 @@ public class Model {
     int profile;
     String name;
 
-    public Model(String videoUrl, int profile, String name) {
+    public Model(String videoUrl) {
         this.videoUrl = videoUrl;
-        this.profile = profile;
-        this.name = name;
+//        this.profile = profile;
+//        this.name = name;
     }
 
     public String getVideoUrl() {

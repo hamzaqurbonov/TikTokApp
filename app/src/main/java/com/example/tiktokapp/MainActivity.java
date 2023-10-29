@@ -2,6 +2,7 @@ package com.example.tiktokapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.content.res.Configuration;
@@ -45,16 +46,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b,R.drawable.profile,"Janna"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a1,R.drawable.ic_launcher_foreground,"Ali"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b,R.drawable.ic_launcher_foreground,"Sveta"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a2,R.drawable.ic_launcher_foreground,"Gulhumor"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a3,R.drawable.ic_launcher_foreground,"Iroda"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a4,R.drawable.ic_launcher_foreground,"Aziza"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a5,R.drawable.ic_launcher_foreground,"Nilufar"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a6,R.drawable.ic_launcher_foreground,"Muhabbat"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a7,R.drawable.ic_launcher_foreground,"Setora"));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a8,R.drawable.ic_launcher_foreground,"Ali"));
+        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b));
+        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a1));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b,R.drawable.ic_launcher_foreground,"Sveta"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a2,R.drawable.ic_launcher_foreground,"Gulhumor"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a3,R.drawable.ic_launcher_foreground,"Iroda"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a4,R.drawable.ic_launcher_foreground,"Aziza"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a5,R.drawable.ic_launcher_foreground,"Nilufar"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a6,R.drawable.ic_launcher_foreground,"Muhabbat"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a7,R.drawable.ic_launcher_foreground,"Setora"));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a8,R.drawable.ic_launcher_foreground,"Ali"));
         adapter = new Adapter(MainActivity.this,arrayList);
         binding.viewpager2.setAdapter(adapter);
 
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 YouTubePlayerUtils.loadOrCueVideo(
                         youTubePlayer,
                         getLifecycle(),
-                        Model.getNextVideoId()
+                        "5K1OfKKEw"
                         ,
                         0f
 
@@ -98,13 +99,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void setPlayNextVideoButtonClickListener(final YouTubePlayer youTubePlayer) {
-        Button playNextVideoButton = findViewById(R.id.next_video_button);
+        ViewPager2 playNextVideoButton = findViewById(R.id.viewpager2);
 
         playNextVideoButton.setOnClickListener(view ->
                 YouTubePlayerUtils.loadOrCueVideo(
                         youTubePlayer,
                         getLifecycle(),
-                        Model.getNextVideoId(),
+                        "5K1OfKKEw",
 
                         0f
                 )
