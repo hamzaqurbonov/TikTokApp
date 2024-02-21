@@ -68,16 +68,16 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-                setPlayNextVideoButtonClickListener(youTubePlayer);
+//                setPlayNextVideoButtonClickListener(youTubePlayer);
                 YouTubePlayerUtils.loadOrCueVideo(
                         youTubePlayer,
                         getLifecycle(),
-                        "5K1OfKKEw"
+                        "S0Q4gqBUs7c"
                         ,
                         0f
 
                 );
-//                Log.d("demo15", getNextVideoId());
+//                Log.d("demo15", modelUrl.getVideoUrl());
             }
 
         };
@@ -87,34 +87,28 @@ public class MainActivity extends AppCompatActivity {
 
         youTubePlayerView.initialize(listener, options);
     }
-    @Override
-    public void onConfigurationChanged(@NonNull Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-
-        // Checks the orientation of the screen
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            youTubePlayerView.matchParent();
-        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            youTubePlayerView.wrapContent();
-        }
-    }
-    private void setPlayNextVideoButtonClickListener(final YouTubePlayer youTubePlayer) {
-        ViewPager2 playNextVideoButton = findViewById(R.id.viewpager2);
-
-        playNextVideoButton.setOnClickListener(view ->
-                YouTubePlayerUtils.loadOrCueVideo(
-                        youTubePlayer,
-                        getLifecycle(),
-                        "5K1OfKKEw",
-
-                        0f
-                )
-
-        );
-        Log.d("demo19", Model.getNextVideoId());
-    }
-
-
-
-
+//    @Override
+//    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+//        super.onConfigurationChanged(newConfig);
+//
+//        // Checks the orientation of the screen
+//        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            youTubePlayerView.matchParent();
+//        } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+//            youTubePlayerView.wrapContent();
+//        }
+//    }
+//    private void setPlayNextVideoButtonClickListener(final YouTubePlayer youTubePlayer) {
+//        Button playNextVideoButton1 = findViewById(R.id.next_video_button);
+//
+//        playNextVideoButton1.setOnClickListener(view ->
+//                YouTubePlayerUtils.loadOrCueVideo(
+//                        youTubePlayer,
+//                        getLifecycle(),
+//                        modelUrl.getVideoUrl(),
+//
+//                        0f
+//                )
+//        );
+//    }
 }

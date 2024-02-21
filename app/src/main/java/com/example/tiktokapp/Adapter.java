@@ -12,10 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tiktokapp.databinding.ReelDesgnBinding;
 
 import java.util.ArrayList;
-
 public class Adapter extends RecyclerView.Adapter<Adapter.VideoHolder> {
-Context context;
-ArrayList<Model>modelArrayList = new ArrayList<>();
+    Context context;
+    ArrayList<Model>modelArrayList = new ArrayList<>();
 
     public Adapter(Context context, ArrayList<Model> modelArrayList) {
         this.context = context;
@@ -58,4 +57,5 @@ ArrayList<Model>modelArrayList = new ArrayList<>();
             binding = ReelDesgnBinding.bind(itemView);
         }
     }
+
 }

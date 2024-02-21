@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            app:videoId="S0Q4gqBUs7c"
+            app:videoId="0ibLfKJQDQs"
             app:autoPlay="true"
 
             app:layout_constraintEnd_toEndOf="parent"
