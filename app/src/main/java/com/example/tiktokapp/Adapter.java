@@ -14,7 +14,7 @@ import com.example.tiktokapp.databinding.ReelDesgnBinding;
 import java.util.ArrayList;
 public class Adapter extends RecyclerView.Adapter<Adapter.VideoHolder> {
     Context context;
-    ArrayList<Model>modelArrayList = new ArrayList<>();
+    ArrayList<Model>modelArrayList;
 
     public Adapter(Context context, ArrayList<Model> modelArrayList) {
         this.context = context;
