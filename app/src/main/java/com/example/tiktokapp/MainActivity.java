@@ -26,10 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     private YouTubePlayerView youTubePlayerView;
     ActivityMainBinding binding;
-    ArrayList<Model> arrayList = new ArrayList<>();
+//    ArrayList<Model> arrayList = new ArrayList<>();
     Adapter adapter;
-
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,17 +38,15 @@ public class MainActivity extends AppCompatActivity {
         youTubePlayerView = findViewById(R.id.youtube_player_view);
 
 
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        String[] videoIds = {"6JYIGclVQdw", "LvetJ9U_tVY"};
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b));
+//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a1));
 
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b));
-        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a1));
-
-        adapter = new Adapter(MainActivity.this,arrayList);
+        adapter = new Adapter(MainActivity.this,videoIds);
         binding.viewpager3.setAdapter(adapter);
-
     }
 
 }

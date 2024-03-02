@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000">
+    android:id="@+id/youtube_player_view">
+
+</com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
 
 
-    <VideoView
-        android:id="@+id/videoView"
-        android:layout_width="380dp"
-        android:layout_height="393dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#000">-->
 
 
-    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube_player_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:videoId="0ibLfKJQDQs"
-            app:autoPlay="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
-        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>
+<!--    <VideoView-->
+<!--        android:id="@+id/videoView"-->
+<!--        android:layout_width="380dp"-->
+<!--        android:layout_height="393dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<!--    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView-->
+<!--            android:id="@+id/youtube_player_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:videoId="0ibLfKJQDQs"-->
+<!--            app:autoPlay="true"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            >-->
+<!--        </com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView>-->
+
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

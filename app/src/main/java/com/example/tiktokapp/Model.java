@@ -19,13 +19,9 @@ public class Model {
 
     public Model(String videoUrl) {
         this.videoUrl = videoUrl;
-//        this.profile = profile;
-//        this.name = name;
     }
 
     public String getVideoUrl() {
-//        String videoUrl = getNextVideoId();
-        Log.d("demo18", videoUrl);
         return videoUrl;
     }
 
