@@ -41,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String[] videoIds = {"6JYIGclVQdw", "LvetJ9U_tVY"};
+        String[] videoIds = { "27fP8KQLB8M", "prnPXVsjBaU", "GTWCWJt-YJI", "K0FLHvxKgzA", "8cCSKkrmOek", "co_NSujPyN4", "xyqdZAagHa4", "eW9PIzfK064"};
 //        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b));
 //        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a1));
 
-        adapter = new Adapter(MainActivity.this,videoIds);
+        adapter = new Adapter(MainActivity.this,videoIds,this.getLifecycle());
         binding.viewpager3.setAdapter(adapter);
     }
 
