@@ -1,52 +1,63 @@
 package com.example.tiktokapp;
 
+
+import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
-import android.annotation.SuppressLint;
-import android.content.res.Configuration;
-import android.os.Bundle;
-//import android.util.Log;
-import android.util.Log;
-import android.widget.Button;
-//import android.widget.TextView;
-
-import com.example.tiktokapp.databinding.ActivityMainBinding;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.YouTubePlayerUtils;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
+import androidx.recyclerview.widget.PagerSnapHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private YouTubePlayerView youTubePlayerView;
-    ActivityMainBinding binding;
-//    ArrayList<Model> arrayList = new ArrayList<>();
-    Adapter adapter;
+    private RecyclerView recyclerView;
+    private VideoAdapter videoAdapter;
+    private List<VideoItem> videoItems;
 
-    @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState ) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        youTubePlayerView = findViewById(R.id.youtube_player_view);
+        recyclerView = findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        // SnapHelper қўшиш
+        SnapHelper snapHelper = new PagerSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
+
+        // Видеолар рўйхати
+        videoItems = new ArrayList<>();
+        videoItems.add(new VideoItem("dQw4w9WgXcQ")); // YouTube видеонинг ID
+        videoItems.add(new VideoItem("EDOWDqn8zpw"));
+        videoItems.add(new VideoItem("tgbNymZ7vqY"));
+        videoItems.add(new VideoItem("yyCB1Q_ikoE"));
+        videoItems.add(new VideoItem("DN26toUeoUI"));
+        videoItems.add(new VideoItem("R1AWAy62PxM"));
 
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        videoAdapter = new VideoAdapter(videoItems, this);
+        recyclerView.setAdapter(videoAdapter);
 
-        String[] videoIds = { "27fP8KQLB8M", "prnPXVsjBaU", "GTWCWJt-YJI", "K0FLHvxKgzA", "8cCSKkrmOek", "co_NSujPyN4", "xyqdZAagHa4", "eW9PIzfK064"};
-//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.b));
-//        arrayList.add(new Model("android.resource://"+ getPackageName() + "/" + R.raw.a1));
-
-        adapter = new Adapter(MainActivity.this,videoIds,this.getLifecycle());
-        binding.viewpager3.setAdapter(adapter);
+        // Скролл ҳисоби орқали автоматик видео ўйнаш
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    int position = ((LinearLayoutManager) recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        // Ҳар бир позиция учун видео юкланиши
+                        VideoItem currentVideo = videoItems.get(position);
+                        System.out.println("Текущий видео: " + currentVideo.getVideoId());
+                    }
+                }
+            }
+        });
     }
-
 }

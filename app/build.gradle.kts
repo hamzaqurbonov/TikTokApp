@@ -44,7 +44,13 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("de.hdodenhof:circleimageview:3.1.0")
+
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0")
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.28")
+
+//    implementation ("com.google.android.exoplayer:exoplayer:2.18.5")
+
+//    implementation ("com.google.android.youtube:youtube-android-player-api:1.2.2")
+
 }
